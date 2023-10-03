@@ -1,6 +1,11 @@
 import { useState, useEffect, useCallback } from "react";
 import "./slider.css";
-const TextSlider = ({ textArray }) => {
+
+interface TextSliderProps {
+  textArray: string[];
+}
+
+const TextSlider: React.FC<TextSliderProps> = ({ textArray }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
 
   const nextIndex = useCallback(() => {

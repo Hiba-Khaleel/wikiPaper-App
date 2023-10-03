@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef } from "react";
 import "./wikiSearch.css";
 import { useFetch } from "../../../components/Hooks/useFetch"; // Import the useFetch hook
 
@@ -11,6 +11,13 @@ interface SearchInfo {
   totalhits: number;
 }
 
+interface WikipediaApiResponse {
+  query: {
+    search: SearchResult[];
+    searchinfo: SearchInfo;
+  };
+}
+
 export default function WikiSearch() {
   const [search, setSearch] = useState("");
   const [results, setResults] = useState<SearchResult[]>([]);
@@ -19,7 +26,7 @@ export default function WikiSearch() {
   const inputRef = useRef<HTMLInputElement | null>(null); // Create a ref for the input element
 
   // Use the useFetch hook to fetch data within the component
-  const { data, isLoading, isError } = useFetch(
+  const { data, isError } = useFetch<WikipediaApiResponse>(
     `https://en.wikipedia.org/w/api.php?action=query&list=search&prop=info&inprop=url&utf8=&format=json&origin=*&srlimit=8&srsearch=${search}`
   );
 
