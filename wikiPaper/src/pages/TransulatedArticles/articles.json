@@ -1,0 +1,22 @@
+{
+  "articles": [
+    { "title": "Twitter", "value": "Twitter", "extract": "Article 1 Extract" },
+    {
+      "title": "Facebook",
+      "value": "Facebook",
+      "extract": "Article 2 Extract"
+    },
+    { "title": "Adele", "value": "Adele", "extract": "Article 3 Extract" },
+    { "title": "NASA", "value": "NASA", "extract": "Article 4 Extract" },
+    {
+      "title": "Albert_Einstein",
+      "value": "Albert_Einstein",
+      "extract": "Article 5 Extract"
+    }
+  ],
+  "languages": [
+    { "name": "English", "value": "en" },
+    { "name": "Spanish", "value": "es" },
+    { "name": "Swedish", "value": "sv" }
+  ]
+}

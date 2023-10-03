@@ -1,0 +1,112 @@
+.tabs-container {
+  max-width: 80%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  background-color: #f5f5c6;
+}
+.languages-list {
+  display: flex;
+  justify-content: center;
+  background-color: #7da87b;
+  border: 1px solid #f5f5c6;
+}
+.Languages {
+  display: flex;
+  flex-direction: column;
+}
+
+.Languages label {
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.tab {
+  background-color: #f0f0f0;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin-right: 10px;
+  font-weight: bold;
+}
+
+.tab:hover {
+  background-color: #e0e0e0;
+}
+
+/* Active tab styles */
+.tab.active {
+  background-color: #f5f5c6;
+  color: #fff;
+}
+
+/* Tab content styles */
+.tab-content {
+  background-color: #f0f0f0;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.articles-titles {
+  border: 1px solid #f5f5c6;
+  max-width: 79%;
+  padding: 0.4rem;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+}
+.articles-titles h2 {
+  margin-right: 2rem;
+  font-size: 1.1rem;
+  margin-top: 0.5rem;
+}
+.articles-list {
+  font-weight: 500;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.articles-list li {
+  margin-right: 1rem;
+  text-align: center;
+  padding: 10px 20px;
+}
+
+.articles-list .selected {
+  background-color: #f5f5c6;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+/* Article content styles */
+.article-slider {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.article-slider h3 {
+  margin-top: 20px;
+  font-size: 24px;
+}
+
+.extract {
+  margin-top: 10px;
+  padding: 2rem;
+}
+.article-content h3 {
+  margin-top: 2rem;
+}
+.language-item {
+  font-weight: 500;
+  padding: 10px 20px;
+  cursor: pointer;
+  width: 80px;
+  border-radius: 1px;
+}
+
+.language-item.active {
+  background-color: #f5f5c6;
+}

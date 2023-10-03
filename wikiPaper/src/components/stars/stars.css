@@ -1,0 +1,39 @@
+.space-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgb(39, 37, 61);
+  background: linear-gradient(
+    27deg,
+    rgba(39, 37, 61, 1) 4%,
+    rgba(50, 103, 101, 1) 33%,
+    rgba(125, 168, 123, 1) 52%
+  );
+  overflow: hidden;
+  z-index: -1;
+}
+
+.star {
+  position: absolute;
+  background: #fff;
+  width: 4%;
+  height: 4px;
+  border-radius: 50%;
+  animation: twinkle 3s linear infinite;
+}
+
+@keyframes twinkle {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+    width: 6px;
+    height: 6px;
+  }
+  100% {
+    opacity: 0;
+  }
+}

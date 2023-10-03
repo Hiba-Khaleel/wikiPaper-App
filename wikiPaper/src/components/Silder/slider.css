@@ -1,0 +1,55 @@
+.text-slider {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  position: relative;
+}
+
+.slider-content {
+  width: 100%;
+  max-width: 800px; /* Adjust as needed */
+  position: relative;
+  display: flex;
+  justify-content: center; /* Center text horizontally */
+  align-items: center; /* Center text vertically */
+}
+
+.text-slider p {
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+  max-width: 100%;
+  position: absolute;
+  font-size: 1.3rem;
+  top: 0; /* Keeps the text at the top */
+  left: 0; /* Keeps the text at the left */
+}
+
+.text-slider p.active {
+  opacity: 1;
+}
+
+.slider-dots {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+  position: absolute;
+  bottom: 10px; /* Adjust as needed */
+  width: 100%; /* Make the dots span the full width */
+}
+
+.slider-dots span {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: #b4b2b2;
+  margin: 0 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.slider-dots span.active {
+  background-color: #fff;
+}
