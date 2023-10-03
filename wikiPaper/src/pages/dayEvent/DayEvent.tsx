@@ -77,12 +77,6 @@ export default function EventDisplay() {
                   alt={`event-${index}`}
                 />
               )}
-              {/* <Link to={`/article/${encodeURIComponent(event.text)}`}>
-                <Button text={"Read More"} />
-              </Link> */}
-              {/* <Link to={`/article/${encodeURIComponent(event.text)}`}>
-                <Button text={"Read More"} />
-              </Link> */}
               <hr />
             </div>
           ))}

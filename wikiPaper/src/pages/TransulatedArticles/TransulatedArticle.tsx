@@ -1,8 +1,9 @@
-import { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import Loading from "../../components/Loading/Loading";
-import articlesData from "./articles.json";
+import articlesData from "./articlesData.json";
+import { useFetch } from "../../components/Hooks/useFetch"; // Import the useFetch hook
 
-import "./languages.css";
+import "./TransulatedLanguages.css";
 
 interface Article {
   title: string;
@@ -19,6 +20,13 @@ interface WikipediaData {
   articles: Article[];
   languages: Language[];
 }
+interface WikipediaResponse {
+  query: {
+    pages: {
+      [pageId: string]: Article; // Assuming 'Article' is the correct type for a page
+    };
+  };
+}
 
 const Languages: React.FC = () => {
   // Define state variables and their types
@@ -33,28 +41,29 @@ const Languages: React.FC = () => {
   // Define a ref for the extract element
   const extractRef = useRef<HTMLDivElement | null>(null);
 
-  // Define the fetchArticle function
-  const fetchArticle = async () => {
-    const apiUrl = `https://${selectedLanguage}.wikipedia.org/w/api.php?action=query&origin=*&format=json&titles=${encodeURIComponent(
-      selectedArticle
-    )}&prop=extracts`;
+  // Define the URL for the Wikipedia API
+  const apiUrl = `https://${selectedLanguage}.wikipedia.org/w/api.php?action=query&origin=*&format=json&titles=${encodeURIComponent(
+    selectedArticle
+  )}&prop=extracts`;
 
-    try {
-      const response = await fetch(apiUrl);
-      const data = await response.json();
+  // Use the useFetch hook to fetch article data
+  const {
+    data,
+    isLoading: isFetchLoading,
+    isError: isFetchError,
+  } = useFetch<WikipediaResponse>(apiUrl);
+
+  // Update article state when data is available
+  useEffect(() => {
+    if (!isFetchLoading && !isFetchError && data) {
       const page = Object.values(data.query.pages)[0] as Article;
       setArticle(page);
       setIsLoading(false);
-    } catch (error) {
-      console.error(`Error fetching ${selectedLanguage} article:`, error);
+    } else if (isFetchError) {
+      console.error(`Error fetching ${selectedLanguage} article.`);
       setIsLoading(false);
     }
-  };
-
-  // Fetch article data when selectedLanguage or selectedArticle changes
-  useEffect(() => {
-    fetchArticle();
-  }, [selectedLanguage, selectedArticle]);
+  }, [data, isFetchLoading, isFetchError, selectedLanguage, selectedArticle]);
 
   // Define event handlers
   const handleLanguageChange = (value: string) => {

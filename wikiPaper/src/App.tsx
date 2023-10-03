@@ -4,7 +4,6 @@ import HomePage from "./pages/Home/Home";
 import RootLayout from "./pages/Root";
 import Error from "./pages/Error/Error";
 import EventDisplay from "./pages/dayEvent/DayEvent";
-import EventDetails from "./pages/dayEvent/DayArticle";
 import ExplorePage from "./pages/Explore/random2";
 import Languages from "./pages/TransulatedArticles/TransulatedArticle";
 import RandomArticlePage from "./pages/Explore/RAricle";
@@ -22,12 +21,6 @@ const router = createBrowserRouter([
       {
         path: "dayEvent",
         element: <EventDisplay />,
-        children: [
-          {
-            path: "dayEvent/:title",
-            element: <EventDetails />,
-          },
-        ],
       },
       {
         path: "about",
