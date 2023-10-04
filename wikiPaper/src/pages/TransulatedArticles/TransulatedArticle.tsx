@@ -93,7 +93,7 @@ const Languages: React.FC = () => {
                     }
                     onClick={() => handleArticleChange(articleItem.value)}
                   >
-                    {articleItem.title}
+                    <h2>{articleItem.title}</h2>
                   </li>
                 ))}
               </ul>
@@ -108,14 +108,14 @@ const Languages: React.FC = () => {
                     }`}
                     onClick={() => handleLanguageChange(lang.value)}
                   >
-                    {lang.name}
+                    <h2>{lang.name}</h2>
                   </div>
                 ))}
               </div>
 
               <div className="article-content">
-                <h3>{article?.title}</h3>
-                <div
+                <h2>{article?.title}</h2>
+                <p
                   ref={extractRef}
                   className="extract"
                   dangerouslySetInnerHTML={{ __html: article?.extract || "" }}

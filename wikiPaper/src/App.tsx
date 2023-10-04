@@ -4,7 +4,7 @@ import HomePage from "./pages/Home/Home";
 import RootLayout from "./pages/Root";
 import Error from "./pages/Error/Error";
 import EventDisplay from "./pages/dayEvent/DayEvent";
-import ExplorePage from "./pages/Explore/random2";
+import ExplorePage from "./pages/Explore/RandomList";
 import Languages from "./pages/TransulatedArticles/TransulatedArticle";
 import RandomArticlePage from "./pages/Explore/RAricle";
 import { ThemeProvider } from "./components/Hooks/ThemeContext";

@@ -193,6 +193,9 @@ nav,
   .nav__item {
     padding-right: 1rem;
   }
+  .theme-switch {
+    margin-top: 1.5rem;
+  }
 }
 
 #dark header {
@@ -214,4 +217,10 @@ nav,
 
 #dark .nav__item {
   color: black;
+}
+
+@media (max-width: 919px) {
+  header {
+    justify-content: space-evenly;
+  }
 }

@@ -75,7 +75,6 @@ const ExplorePage: React.FC = () => {
           articles.map((article, index) => (
             <div key={index} className="random-Card">
               <div className="random-article-content">
-                {/* <p>{article.extract}</p> */}
                 {article.images.length > 0 ? (
                   <img
                     src={`https://en.wikipedia.org/wiki/Special:FilePath/${encodeURIComponent(

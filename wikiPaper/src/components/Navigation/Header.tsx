@@ -32,7 +32,7 @@ export default function Header() {
   return (
     <header>
       <div className="theme-switch" onClick={handleThemeToggle}>
-        <span className="theme-icon">{theme === "dark" ? "☀️" : "🌑"}</span>
+        <span className="theme-icon">{theme === "dark" ? "☀️" : "🌕"}</span>
       </div>
       <nav className="nav">
         <NavLink className="nav__item" to="/">
@@ -78,7 +78,7 @@ export default function Header() {
               }
               onClick={closeMenu}
             >
-              Day's Event
+              Events
             </NavLink>
           </li>
           <li className="nav__item">
