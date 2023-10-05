@@ -68,35 +68,37 @@ const ExplorePage: React.FC = () => {
         className="generateBtn"
       />
 
-      <div className="random-articles-container">
-        {isLoading ? (
-          <Loading />
-        ) : (
-          articles.map((article, index) => (
-            <div key={index} className="random-Card">
-              <div className="random-article-content">
-                {article.images.length > 0 ? (
-                  <img
-                    src={`https://en.wikipedia.org/wiki/Special:FilePath/${encodeURIComponent(
-                      article.images[0].title
-                    )}`}
-                    alt={article.images[0].title}
-                  />
-                ) : (
-                  <img src={getDefaultImage()} alt="Default" />
-                )}
+      {isLoading ? (
+        <Loading />
+      ) : (
+        <>
+          <div className="random-articles-container">
+            {articles.map((article, index) => (
+              <div key={index} className="random-Card">
+                <div className="random-article-content">
+                  {article.images.length > 0 ? (
+                    <img
+                      src={`https://en.wikipedia.org/wiki/Special:FilePath/${encodeURIComponent(
+                        article.images[0].title
+                      )}`}
+                      alt={article.images[0].title}
+                    />
+                  ) : (
+                    <img src={getDefaultImage()} alt="Default" />
+                  )}
+                </div>
+                <h2>{article.title}</h2>
+                <Link
+                  to={`/exploreArticles/${article.title}`}
+                  className="learn-More"
+                >
+                  Read More
+                </Link>
               </div>
-              <h2>{article.title}</h2>
-              <Link
-                to={`/exploreArticles/${article.title}`}
-                className="learn-More"
-              >
-                Read More
-              </Link>
-            </div>
-          ))
-        )}
-      </div>
+            ))}
+          </div>
+        </>
+      )}
     </>
   );
 };

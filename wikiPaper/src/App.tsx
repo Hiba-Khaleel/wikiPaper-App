@@ -1,5 +1,4 @@
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
-import About from "./pages/About/About";
 import HomePage from "./pages/Home/Home";
 import RootLayout from "./pages/Root";
 import Error from "./pages/Error/Error";
@@ -21,10 +20,6 @@ const router = createBrowserRouter([
       {
         path: "dayEvent",
         element: <EventDisplay />,
-      },
-      {
-        path: "about",
-        element: <About />,
       },
       {
         path: "Languages",

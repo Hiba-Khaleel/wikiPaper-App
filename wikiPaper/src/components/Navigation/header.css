@@ -1,15 +1,17 @@
 header {
   display: flex;
   justify-content: space-between;
-  background-color: transparent;
-  backdrop-filter: blur(5px);
+  background-color: #fff;
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
   z-index: 99999;
-  height: 1rem;
+  height: 5rem;
   padding: 0.5rem;
+}
+.header-dark-theme {
+  background-color: black;
 }
 .nav.dark-theme-item .nav__link {
   color: #fff;
@@ -39,15 +41,19 @@ header {
 
 nav {
   display: flex;
-  justify-content: space-between;
-  width: 70%;
+  justify-content: space-evenly;
+  width: 60%;
   margin: 0 auto;
   padding-top: 0.7rem;
 }
-
+nav .logo {
+  display: flex;
+  flex-direction: row;
+}
 nav h2 {
-  font-size: 2.5rem;
-  margin-top: 1rem;
+  font-size: 2.4rem;
+  margin-top: 0rem;
+  margin-right: 1.2rem;
 }
 
 .nav__item {
@@ -57,6 +63,8 @@ nav h2 {
 .theme-switch {
   width: 1rem;
   font-size: 1.7rem;
+  margin-top: 1.5rem;
+  margin-right: 3rem;
 }
 
 nav,
@@ -78,10 +86,17 @@ nav,
   font-size: var(--small-size);
   color: var(--text-color);
 }
+.nav__item a .active {
+  border-bottom: 1px solid green;
+}
 
 /*------------ mobile navigation ------------*/
 
 @media (max-width: 767px) {
+  .theme-switch {
+    margin-bottom: 1rem;
+    margin-right: 5rem;
+  }
   nav h2 {
     margin-top: 0.3rem;
   }
@@ -90,6 +105,7 @@ nav,
     width: 1.8rem;
     height: 0.4rem;
     margin: 0.2rem auto;
+    margin-left: 1rem;
     -webkit-transition: all 0.3s ease-in-out;
     transition: all 0.3s ease-in-out;
     background-color: #000000;
@@ -130,7 +146,7 @@ nav,
   }
 
   .logo {
-    padding-top: 1rem;
+    margin-left: 1rem;
   }
 
   .nav__list {
@@ -140,12 +156,13 @@ nav,
     transition: transform 1s ease-in-out;
   }
   .nav__list.open {
-    margin: 0 auto;
+    margin: 0 1rem 5rem 6rem;
     display: flex;
     align-items: center;
     padding-top: 2rem;
     padding-bottom: 100vh;
     width: 95%;
+    height: 5rem;
     position: relative;
   }
 
@@ -156,8 +173,8 @@ nav,
     left: 0;
     width: 100%;
     height: 40%;
-    background-color: rgba(255, 255, 255, 0.9);
-    filter: blur(1px);
+    background-color: #fff;
+    border: 1px solid grey;
     z-index: -1;
   }
 

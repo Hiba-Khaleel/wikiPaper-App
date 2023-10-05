@@ -1,160 +1,64 @@
-/* button:hover {
-  border: 2px solid #fff;
-  box-shadow: inset 6.5em 0 0 0 #a5e9e1;
-  color: #fff;
-  cursor: pointer;
-  border: none;
-  background-size: 300% 100%;
-  border-radius: 50px;
-  -o-transition: all 0.4s ease-in-out;
-  -webkit-transition: all 0.4s ease-in-out;
-  transition: all 0.4s ease-in-out;
-}
-
-button:focus {
-  outline: none;
-}
-
+/* button.css */
 button {
-  background-image: linear-gradient(
-    to right,
-    #25aae1,
-    #4481eb,
-    #04befe,
-    #3f86ed
-  );
-  box-shadow: 0 4px 15px 0 rgba(65, 132, 234, 0.75);
-} */
-/* button {
-  margin: 1rem;
-  background-image: linear-gradient(to right, #085843, #21ae9e);
-  box-shadow: 0 4px 15px 0 rgba(10, 81, 47, 0.75);
+  width: 220px;
+  height: 50px;
   border: none;
-  color: #fff;
-  cursor: pointer;
-  border-radius: 50px;
-  background-size: 300% 100%;
-  transition: all 0.1s ease-in-out;
   outline: none;
-}
-
-button:hover {
-  background-position: 100% 0;
   color: black;
-} */
-
-/* button {
-  color: green;
+  background: #111;
   cursor: pointer;
-  display: block;
-  font-weight: 400;
-  line-height: 45px;
-  margin: 0 0 2em;
-  max-width: 400px;
   position: relative;
-  text-decoration: none;
-  text-transform: uppercase;
-  width: 100%;
-}
-button {
-  letter-spacing: 0;
+  z-index: 0;
+  border-radius: 10px;
+  overflow: hidden; /* Add overflow hidden */
 }
 
-button:hover,
-button:active {
-  letter-spacing: 5px;
-}
-
-button:after,
-button:before {
-  backface-visibility: hidden;
-  border: 1px solid rgba(#fff, 0);
-  bottom: 0px;
-  content: " ";
-  display: block;
-  margin: 0 auto;
-  position: relative;
-  transition: all 280ms ease-in-out;
-  width: 0;
-}
-
-button:hover:after,
-button:hover:before {
-  backface-visibility: hidden;
-  border-color: #fff;
-  transition: width 350ms ease-in-out;
-  width: 70%;
-}
-
-button:hover:before {
-  bottom: auto;
+button:before,
+button:after {
+  content: "";
+  background: linear-gradient(
+    45deg,
+    #f5f5c6,
+    #7da87b,
+    #326765,
+    #326765,
+    #326765,
+    #7da87b,
+    #a2cdb0,
+    #d0dd97
+  );
+  position: absolute;
   top: 0;
-  width: 70%;
-} */
-/* .button {
-  color: green;
-  cursor: pointer;
-  display: inline-block;
-  font-weight: 400;
-  text-decoration: none;
-  text-transform: uppercase;
-  padding: 10px 20px;
-  background-color: transparent;
-  border: 4px solid green;
-  animation: all 2s ease-in-out; /* You can adjust the duration and timing function */
-/* Define a variable for the color */
-:root {
-  --color: #0cf;
-}
-
-/* Button styles */
-button {
-  display: inline-block;
-  padding: 0.75rem 1.25rem;
-  border-radius: 10rem;
-  color: #fff;
-  text-transform: uppercase;
-  font-size: 1rem;
-  letter-spacing: 0.15rem;
-  transition: all 0.3s;
-  position: relative;
-  overflow: hidden;
-  z-index: 1;
-}
-
-/* Pseudo-element for the background color */
-button::after {
-  content: "";
-  position: absolute;
-  bottom: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: var(--color);
-  border-radius: 10rem;
-  z-index: -2;
-}
-
-/* Pseudo-element for the hover effect */
-button::before {
-  content: "";
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 0%;
-  height: 100%;
-  background-color: darken(var(--color), 15%);
-  transition: all 0.3s;
-  border-radius: 10rem;
+  background-size: 400%;
   z-index: -1;
+  filter: blur(5px);
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+  border-radius: 10px;
 }
 
-/* Hover effect */
-button:hover {
-  color: #fff;
+button:hover:before {
+  animation: glowing 20s linear infinite;
+  opacity: 1;
 }
 
-/* Expand the background color on hover */
-button:hover::before {
-  width: 100%;
+button:active:before,
+button:focus:before {
+  animation: none; /* Remove animation on click/focus */
+  opacity: 0;
+}
+
+@keyframes glowing {
+  0% {
+    background-position: 0 0;
+  }
+  50% {
+    background-position: 400% 0;
+  }
+  100% {
+    background-position: 0 0;
+  }
 }

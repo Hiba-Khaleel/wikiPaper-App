@@ -19,13 +19,11 @@ body {
 }
 
 .light-theme {
-  /* background-color: transparent; */
   color: #000;
-  text-shadow: #27253d 1px 0 10px;
 }
 
 .dark-theme {
-  color: #f5f5c6;
+  color: #fff;
 }
 
 .root-container {

@@ -30,12 +30,9 @@ export default function Header() {
   };
 
   return (
-    <header>
-      <div className="theme-switch" onClick={handleThemeToggle}>
-        <span className="theme-icon">{theme === "dark" ? "☀️" : "🌕"}</span>
-      </div>
+    <header className={theme === "dark" ? "header-dark-theme" : ""}>
       <nav className="nav">
-        <NavLink className="nav__item" to="/">
+        <NavLink className="nav__item logo " to="/">
           <h2>WikiPaper</h2>
         </NavLink>
 
@@ -59,17 +56,7 @@ export default function Header() {
               Home
             </NavLink>
           </li>
-          <li className="nav__item">
-            <NavLink
-              to="/about"
-              className={
-                location.pathname === "/about" ? "active" : "nav__link"
-              }
-              onClick={closeMenu}
-            >
-              About
-            </NavLink>
-          </li>
+
           <li className="nav__item">
             <NavLink
               to="/dayEvent"
@@ -107,6 +94,9 @@ export default function Header() {
           </li>
         </ul>
       </nav>
+      <div className="theme-switch" onClick={handleThemeToggle}>
+        <span className="theme-icon">{theme === "dark" ? "☀️" : "🌕"}</span>
+      </div>
     </header>
   );
 }

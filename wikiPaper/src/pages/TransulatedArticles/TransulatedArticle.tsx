@@ -83,7 +83,6 @@ const Languages: React.FC = () => {
           <h1>Read by multiple languages</h1>
           <div className="article-container">
             <div className="articles-titles">
-              <h2>Choose an Article</h2>
               <ul className="articles-list">
                 {articles.map((articleItem) => (
                   <li

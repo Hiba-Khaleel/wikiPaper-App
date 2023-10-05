@@ -50,6 +50,7 @@ export default function EventDisplay() {
             max={12}
             onChange={(e) => setSelectedMonth(parseInt(e.target.value, 10))}
           />
+
           <label htmlFor="selectedDay">Select Day: </label>
           <input
             type="number"
@@ -77,7 +78,6 @@ export default function EventDisplay() {
                   alt={`event-${index}`}
                 />
               )}
-              <hr />
             </div>
           ))}
         </div>

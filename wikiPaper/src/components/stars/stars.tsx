@@ -7,10 +7,7 @@ const SpaceBackground = () => {
   const theme = context?.theme;
 
   const spaceBackgroundStyle = {
-    background:
-      theme === "dark"
-        ? "#000"
-        : "linear-gradient(27deg, rgba(39, 37, 61, 1) 4%, rgba(50, 103, 101, 1) 33%, rgba(125, 168, 123, 1) 52%)",
+    background: theme === "dark" ? "#000" : "#fff",
   };
   const generateStars = () => {
     const stars = [];

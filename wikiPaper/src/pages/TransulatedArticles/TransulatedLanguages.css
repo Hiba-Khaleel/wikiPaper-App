@@ -3,13 +3,14 @@
   margin: 0 auto;
   display: flex;
   flex-direction: column;
-  background-color: #f5f5c6;
+  background-color: #fff;
+  border: 0.1px solid #d5d5d5;
 }
 .languages-list {
   display: flex;
   justify-content: center;
   background-color: #7da87b;
-  border: 1px solid #f5f5c6;
+  border: 1px solid #d5d5d5;
 }
 .article-content h2 {
   margin: 0 auto;
@@ -21,48 +22,14 @@
   flex-direction: column;
 }
 
-.Languages label {
-  margin-bottom: 5px;
-  font-weight: bold;
-}
-
-.tab {
-  background-color: #f0f0f0;
-  cursor: pointer;
-  transition: background-color 0.3s;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  margin-right: 10px;
-  font-weight: bold;
-}
-
-.tab:hover {
-  background-color: #e0e0e0;
-}
-
-/* Active tab styles */
-.tab.active {
-  background-color: #f5f5c6;
-  color: #fff;
-}
-
-/* Tab content styles */
-.tab-content {
-  background-color: #f0f0f0;
-  padding: 20px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-}
-
 .articles-titles {
-  border: 1px solid #f5f5c6;
-  background-color: #7da87b;
   max-width: 79%;
   padding: 0.4rem;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  border: 0.1px solid #d5d5d5;
 }
 .articles-titles h2 {
   font-size: 1rem;
@@ -71,30 +38,20 @@
 .articles-list {
   display: flex;
   justify-content: center;
-  flex-wrap: wrap;
+  background-color: #fff;
+  padding: 1rem;
 }
 .articles-list li {
-  margin-right: 1rem;
-  text-align: center;
-  padding: 10px 20px;
+  padding: 0.5rem;
+  width: 10rem;
+  margin: 0 auto;
+  border: 1px solid transparent; /* Start with a transparent border */
+  transition: border 0.1s ease-in-out;
 }
 
 .articles-list .selected {
-  background-color: #f5f5c6;
+  border: 1px solid #7da87b;
   cursor: pointer;
-  border-radius: 4px;
-}
-
-/* Article content styles */
-.article-slider {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.article-slider h3 {
-  margin-top: 20px;
-  font-size: 24px;
 }
 
 .extract {
@@ -102,12 +59,12 @@
   color: black;
 }
 .language-item {
-  padding: 10px 20px;
+  padding: 0.3rem 1rem 0.3rem 1rem;
   cursor: pointer;
-  width: 80px;
   border-radius: 1px;
+  transition: background-color 0.1s ease-in; /* Transition the background-color property */
 }
 
 .language-item.active {
-  background-color: #f5f5c6;
+  background-color: #fff;
 }

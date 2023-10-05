@@ -1,6 +1,7 @@
 import { useState, useEffect, useRef } from "react";
+import { useFetch } from "../../../components/Hooks/useFetch";
+import Logo from "../../../components/Logo/Logo";
 import "./wikiSearch.css";
-import { useFetch } from "../../../components/Hooks/useFetch"; // Import the useFetch hook
 
 interface SearchResult {
   title: string;
@@ -58,6 +59,7 @@ export default function WikiSearch() {
 
   return (
     <div className="search-container">
+      <Logo />
       <h1>Wiki search</h1>
       <form onSubmit={handleSearch}>
         <input
@@ -67,12 +69,13 @@ export default function WikiSearch() {
           onChange={(e) => setSearch(e.target.value)}
         />
         {searchInfo.totalhits ? (
-          <p>Search result: {searchInfo.totalhits}</p>
+          <p className="total-hits">
+            Search result:<span>{searchInfo.totalhits}</span>
+          </p>
         ) : (
           ""
         )}
       </form>
-
       <ul className="search-result">
         {results.map((result, i) => (
           <li key={i}>
