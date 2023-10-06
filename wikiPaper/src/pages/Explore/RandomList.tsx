@@ -1,8 +1,9 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import Button from "../../components/Button/Button";
 import WikiSearch from "./WikiSearch/WikiSearch";
 import { Link } from "react-router-dom";
 import Loading from "../../components/Loading/Loading";
+import { ThemeContext } from "../../components/Hooks/ThemeContext";
 
 import "./random.css";
 
@@ -20,6 +21,9 @@ interface Article {
 const ExplorePage: React.FC = () => {
   const [articles, setArticles] = useState<Article[]>([]);
   const [isLoading, setIsLoading] = useState(true);
+
+  const context = useContext(ThemeContext);
+  const theme = context?.theme;
 
   const fetchRandomArticles = async () => {
     try {
@@ -74,7 +78,12 @@ const ExplorePage: React.FC = () => {
         <>
           <div className="random-articles-container">
             {articles.map((article, index) => (
-              <div key={index} className="random-Card">
+              <div
+                key={index}
+                className={`random-Card ${
+                  theme === "dark" ? "randomCardDark" : ""
+                }`}
+              >
                 <div className="random-article-content">
                   {article.images.length > 0 ? (
                     <img

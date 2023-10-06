@@ -1,5 +1,5 @@
-import WikiCommons from "../../assets/images/wikiCommens.gif";
-import TextSlider from "../../components/Silder/Slider";
+import WikiCommons from "../../assets/images/wikiCommons.gif";
+import TextSlider from "../../components/Slider/Slider";
 
 import "./Home.css";
 const HomePage: React.FC = () => {
@@ -12,11 +12,9 @@ const HomePage: React.FC = () => {
     <>
       <div className="about">
         <img src={WikiCommons} alt="WikiCommons" />
-        <h1>welcome to this journey</h1>
+        <h1>welcome to reading journey</h1>
         <p>
-          Join us on this literary adventure as we turn pages, open new
-          chapters, and embrace the stories that enrich our lives. Let's embark
-          on this exploration of the written word, one page at a time.
+          EXPLORE<span> - </span>READ<span> - </span> LEARN
         </p>
         <div className="content">
           <TextSlider textArray={textArray} />

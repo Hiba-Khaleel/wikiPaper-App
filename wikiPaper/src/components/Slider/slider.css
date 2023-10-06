@@ -9,11 +9,11 @@
 
 .slider-content {
   width: 100%;
-  max-width: 800px; /* Adjust as needed */
+  max-width: 800px;
   position: relative;
   display: flex;
-  justify-content: center; /* Center text horizontally */
-  align-items: center; /* Center text vertically */
+  justify-content: center;
+  align-items: center;
 }
 
 .text-slider p {
@@ -22,12 +22,13 @@
   max-width: 100%;
   position: absolute;
   font-size: 1.3rem;
-  top: 0; /* Keeps the text at the top */
-  left: 0; /* Keeps the text at the left */
+  top: 0;
+  left: 0;
 }
 
 .text-slider p.active {
   opacity: 1;
+  border: none;
 }
 
 .slider-dots {
@@ -36,20 +37,20 @@
   align-items: center;
   margin-top: 20px;
   position: absolute;
-  bottom: 10px; /* Adjust as needed */
-  width: 100%; /* Make the dots span the full width */
+  bottom: 10px;
+  width: 100%;
 }
 
 .slider-dots span {
   width: 10px;
   height: 10px;
   border-radius: 50%;
-  background-color: #b4b2b2;
+  background-color: grey;
   margin: 0 5px;
   cursor: pointer;
   transition: background-color 0.3s ease-in-out;
 }
 
 .slider-dots span.active {
-  background-color: #fff;
+  background-color: green;
 }

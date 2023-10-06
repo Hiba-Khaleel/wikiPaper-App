@@ -1,8 +1,7 @@
-import { useEffect, useState, useMemo } from "react";
-//import Button from "../../components/Button/Button";
+import { useEffect, useState, useMemo, useContext } from "react";
 import Loading from "../../components/Loading/Loading";
 import { useFetch } from "../../components/Hooks/useFetch";
-//import { Link } from "react-router-dom";
+import { ThemeContext } from "../../components/Hooks/ThemeContext";
 import "./dayEvent.css";
 
 interface Event {
@@ -23,7 +22,9 @@ export default function EventDisplay() {
     return `https://en.wikipedia.org/api/rest_v1/feed/onthisday/events/${selectedMonth}/${selectedDay}`;
   }, [selectedMonth, selectedDay]);
 
-  //const url = `https://en.wikipedia.org/api/rest_v1/feed/onthisday/events/${selectedMonth}/${selectedDay}`;
+  const context = useContext(ThemeContext);
+  const theme = context?.theme;
+
   const { data, isLoading, isError } = useFetch<ApiResponse>(url);
 
   useEffect(() => {
@@ -69,7 +70,10 @@ export default function EventDisplay() {
       ) : (
         <div className="eventContainer">
           {dayEvents.map((event, index) => (
-            <div key={index} className="eventCard">
+            <div
+              key={index}
+              className={`eventCard ${theme === "dark" ? "eventCardDark" : ""}`}
+            >
               <h2>{event.year}</h2>
               <p>{event.text}</p>
               {event.pages[0]?.thumbnail?.source && (
