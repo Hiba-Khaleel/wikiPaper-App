@@ -2,8 +2,8 @@ import React, { useEffect, useState } from "react";
 import Button from "../../components/Button/Button";
 import { useNavigate } from "react-router-dom";
 import Loading from "../../components/Loading/Loading";
-
 import { useParams } from "react-router-dom";
+import "./random.css";
 
 interface Image {
   ns: number;
@@ -81,38 +81,41 @@ const RandomArticlePage: React.FC = () => {
   };
 
   return (
-    <div className="article-container">
+    <>
       <Button onClick={goBack} text="go back" />
-      {articleData ? (
-        <>
-          <h1>{articleData.title}</h1>
-          <div
-            className="extract"
-            dangerouslySetInnerHTML={{ __html: articleData.extract }}
-          />
 
-          {images.length > 0 && (
-            <div>
-              <h2>Images</h2>
-              <ul>
-                {images.map((image, index) => (
-                  <li key={index}>
-                    <img
-                      src={`https://en.wikipedia.org/wiki/Special:FilePath/${encodeURIComponent(
-                        image
-                      )}`}
-                      alt={image}
-                    />
-                  </li>
-                ))}
-              </ul>
-            </div>
-          )}
-        </>
-      ) : (
-        <Loading />
-      )}
-    </div>
+      <div className="article-container">
+        {articleData ? (
+          <>
+            <h1>{articleData.title}</h1>
+            <div
+              className="extract"
+              dangerouslySetInnerHTML={{ __html: articleData.extract }}
+            />
+
+            {images.length > 0 && (
+              <div className="images-container">
+                <h2>Images</h2>
+                <ul>
+                  {images.map((image, index) => (
+                    <li key={index}>
+                      <img
+                        src={`https://en.wikipedia.org/wiki/Special:FilePath/${encodeURIComponent(
+                          image
+                        )}`}
+                        alt={image}
+                      />
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            )}
+          </>
+        ) : (
+          <Loading />
+        )}
+      </div>
+    </>
   );
 };
 

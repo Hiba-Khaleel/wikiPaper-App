@@ -4,32 +4,25 @@
   display: flex;
   flex-direction: column;
   background-color: #fff;
-  border: 0.1px solid #d5d5d5;
 }
 .languages-list {
   display: flex;
   justify-content: center;
   background-color: #7da87b;
-  border: 1px solid #d5d5d5;
+  border: 1px solid #7da87b;
 }
 .article-content h2 {
   margin: 0 auto;
   font-size: 1.3rem;
   margin-top: 1rem;
 }
-.Languages {
-  display: flex;
-  flex-direction: column;
-}
 
 .articles-titles {
-  max-width: 79%;
-  padding: 0.4rem;
+  max-width: 82%;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  border: 0.1px solid #d5d5d5;
 }
 .articles-titles h2 {
   font-size: 1rem;
@@ -39,13 +32,13 @@
   display: flex;
   justify-content: center;
   background-color: #fff;
-  padding: 1rem;
 }
 .articles-list li {
-  padding: 0.5rem;
+  padding: 0.3rem;
   width: 10rem;
+  border: 1px solid transparent;
+
   margin: 0 auto;
-  border: 1px solid transparent; /* Start with a transparent border */
   transition: border 0.1s ease-in-out;
 }
 
@@ -61,10 +54,35 @@
 .language-item {
   padding: 0.3rem 1rem 0.3rem 1rem;
   cursor: pointer;
-  border-radius: 1px;
   transition: background-color 0.1s ease-in; /* Transition the background-color property */
 }
 
 .language-item.active {
   background-color: #fff;
+}
+
+@media (max-width: 767px) {
+  .languages-page h1 {
+    font-size: 2.2rem;
+  }
+  .languages-list {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .articles-titles h2 {
+    font-size: 1rem;
+    margin: 0 auto;
+  }
+  .articles-list {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 3rem;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 920px) {
+  .languages-page h1 {
+    font-size: 2.2rem;
+  }
 }

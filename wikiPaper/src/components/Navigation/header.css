@@ -10,6 +10,15 @@ header {
   height: 5rem;
   padding: 0.5rem;
 }
+.active:not(.logo) {
+  border-bottom: 2px solid #7da87b; /* Change the color as needed */
+}
+.active:not(.logo):hover {
+  color: #7da87b;
+}
+.nav__link:hover {
+  color: #7da87b;
+}
 .header-dark-theme {
   background-color: black;
 }
@@ -56,11 +65,8 @@ nav h2 {
   margin-right: 1.2rem;
 }
 
-.nav__item {
-  text-decoration: none;
-}
-
 .theme-switch {
+  cursor: pointer;
   width: 1rem;
   font-size: 1.7rem;
   margin-top: 1.5rem;
@@ -101,6 +107,7 @@ nav,
     margin-top: 0.3rem;
   }
   .line {
+    cursor: pointer;
     display: block;
     width: 1.8rem;
     height: 0.4rem;
@@ -146,7 +153,8 @@ nav,
   }
 
   .logo {
-    margin-left: 1rem;
+    margin-top: -0.5rem;
+    margin-left: -6rem;
   }
 
   .nav__list {
@@ -165,7 +173,9 @@ nav,
     height: 5rem;
     position: relative;
   }
-
+  .active:not(.logo) {
+    border-bottom: 2px solid #7da87b; /* Change the color as needed */
+  }
   .nav__list.open::before {
     content: "";
     position: absolute;
@@ -211,7 +221,7 @@ nav,
     padding-right: 1rem;
   }
   .theme-switch {
-    margin-top: 1.5rem;
+    margin-top: 1.2rem;
   }
 }
 
@@ -239,5 +249,8 @@ nav,
 @media (max-width: 919px) {
   header {
     justify-content: space-evenly;
+  }
+  nav {
+    margin-left: 2rem;
   }
 }

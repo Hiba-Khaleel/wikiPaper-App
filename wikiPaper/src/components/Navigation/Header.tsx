@@ -94,6 +94,7 @@ export default function Header() {
           </li>
         </ul>
       </nav>
+
       <div className="theme-switch" onClick={handleThemeToggle}>
         <span className="theme-icon">{theme === "dark" ? "☀️" : "🌕"}</span>
       </div>

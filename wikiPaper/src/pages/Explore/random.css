@@ -33,7 +33,33 @@ h2 {
 .generateBtn {
   margin: 0 auto;
   margin-top: 3rem;
+  margin-bottom: 1rem;
 }
+.article-container {
+  border: 1px solid #d5d5d5;
+  max-width: 80%;
+  margin: 0 auto;
+  background-color: #fff;
+}
+.images-container h2 {
+  margin: 0 auto;
+  font-size: 1.7rem;
+  border-bottom: 1px solid #d5d5d5;
+  width: 20%;
+}
+.images-container ul {
+  display: flex;
+  margin: 0 auto;
+  padding: 2rem;
+}
+.images-container ul li {
+  margin: 0 auto;
+}
+.images-container ul img {
+  max-width: 10rem;
+  max-height: 10rem;
+}
+
 @media (min-width: 320px) and (max-width: 767px) {
   .random-articles-container {
     grid-template-columns: auto;

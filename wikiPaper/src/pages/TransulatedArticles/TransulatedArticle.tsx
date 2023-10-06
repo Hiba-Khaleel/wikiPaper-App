@@ -75,7 +75,7 @@ const Languages: React.FC = () => {
   };
 
   return (
-    <div className="wikipedia-app">
+    <div className="languages-page">
       {isLoading ? (
         <Loading />
       ) : (

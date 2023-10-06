@@ -11,8 +11,9 @@ h1 {
   font-size: 1rem;
   padding: 0.1rem;
   margin: 0.1rem;
+  border: 1px solid gray;
   max-width: 6rem;
-  transition: box-shadow 0.3s ease, transform 0.3s ease; /* Add transition */
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
 }
 .inputDateContainer input:focus-within {
   box-shadow: 3px 3px 6px rgba(253, 254, 254, 0.5);
