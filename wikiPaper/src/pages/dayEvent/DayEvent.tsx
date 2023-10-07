@@ -2,6 +2,7 @@ import { useEffect, useState, useMemo, useContext } from "react";
 import Loading from "../../components/Loading/Loading";
 import { useFetch } from "../../components/Hooks/useFetch";
 import { ThemeContext } from "../../components/Hooks/ThemeContext";
+import BackToTopButton from "../../components/BackToTopBtn/BackBtn";
 import "./dayEvent.css";
 
 interface Event {
@@ -86,6 +87,7 @@ export default function EventDisplay() {
           ))}
         </div>
       )}
+      <BackToTopButton />
     </>
   );
 }

@@ -4,6 +4,7 @@ import WikiSearch from "./WikiSearch/WikiSearch";
 import { Link } from "react-router-dom";
 import Loading from "../../components/Loading/Loading";
 import { ThemeContext } from "../../components/Hooks/ThemeContext";
+import BackToTopButton from "../../components/BackToTopBtn/BackBtn";
 
 import "./random.css";
 
@@ -108,6 +109,7 @@ const ExplorePage: React.FC = () => {
           </div>
         </>
       )}
+      <BackToTopButton />
     </>
   );
 };

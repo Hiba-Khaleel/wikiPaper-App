@@ -1,8 +1,6 @@
 .footer {
   width: 100%;
-  background-color: #326765;
-  background-color: transparent;
-  backdrop-filter: blur(200px);
+  background-color: #7da87b;
   margin-top: 3rem;
 }
 .footer-info {
@@ -13,7 +11,7 @@
   justify-content: center;
   align-items: center;
   font-size: 1rem;
-  margin-bottom: 1rem;
+  padding: 0.7rem;
 }
 
 @media (max-width: 767px) {
@@ -22,9 +20,5 @@
     flex-direction: column;
     justify-content: space-around;
     font-size: 1rem;
-    padding: 0.1rem;
   }
-}
-
-@media (min-width: 768px) and (max-width: 920px) {
 }

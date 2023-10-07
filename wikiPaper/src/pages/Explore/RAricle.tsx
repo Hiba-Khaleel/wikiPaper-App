@@ -3,6 +3,7 @@ import Button from "../../components/Button/Button";
 import { useNavigate } from "react-router-dom";
 import Loading from "../../components/Loading/Loading";
 import { useParams } from "react-router-dom";
+import BackToTopButton from "../../components/BackToTopBtn/BackBtn";
 import "./random.css";
 
 interface Image {
@@ -115,6 +116,7 @@ const RandomArticlePage: React.FC = () => {
           <Loading />
         )}
       </div>
+      <BackToTopButton />
     </>
   );
 };

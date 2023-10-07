@@ -1,7 +1,8 @@
 import React, { useState, useEffect, useRef } from "react";
 import Loading from "../../components/Loading/Loading";
 import articlesData from "./articlesData.json";
-import { useFetch } from "../../components/Hooks/useFetch"; // Import the useFetch hook
+import { useFetch } from "../../components/Hooks/useFetch";
+import BackToTopButton from "../../components/BackToTopBtn/BackBtn";
 
 import "./TransulatedLanguages.css";
 
@@ -124,6 +125,7 @@ const Languages: React.FC = () => {
           </div>
         </>
       )}
+      <BackToTopButton />
     </div>
   );
 };
