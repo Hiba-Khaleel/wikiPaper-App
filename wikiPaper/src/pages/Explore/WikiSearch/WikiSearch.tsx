@@ -1,6 +1,8 @@
-import { useState, useEffect, useRef } from "react";
-import { useFetch } from "../../../components/Hooks/useFetch";
+import { useState, useContext, useRef } from "react";
 import Logo from "../../../components/Logo/Logo";
+import { useFetch } from "../../../components/Hooks/searchUseFetch";
+import { ThemeContext } from "../../../components/Hooks/ThemeContext";
+import Button from "../../../components/Button/Button";
 import "./wikiSearch.css";
 
 interface SearchResult {
@@ -21,76 +23,76 @@ interface WikipediaApiResponse {
 
 export default function WikiSearch() {
   const [search, setSearch] = useState("");
-  const [results, setResults] = useState<SearchResult[]>([]);
-  const [searchInfo, setSearchInfo] = useState<SearchInfo>({ totalhits: 0 });
+  const inputRef = useRef<HTMLInputElement | null>(null);
+  const [isSearchVisible, setIsSearchVisible] = useState(false);
 
-  const inputRef = useRef<HTMLInputElement | null>(null); // Create a ref for the input element
+  const context = useContext(ThemeContext);
+  const theme = context?.theme;
+  const apiUrl = `https://en.wikipedia.org/w/api.php?action=query&list=search&prop=info&inprop=url&utf8=&format=json&origin=*&srlimit=8&srsearch=${search}`;
 
-  // Use the useFetch hook to fetch data within the component
-  const { data, isError } = useFetch<WikipediaApiResponse>(
-    `https://en.wikipedia.org/w/api.php?action=query&list=search&prop=info&inprop=url&utf8=&format=json&origin=*&srlimit=8&srsearch=${search}`
-  );
+  const { data, isLoading, isError } = useFetch<WikipediaApiResponse>(apiUrl);
 
-  const handleSearch = async (event: React.FormEvent<HTMLFormElement>) => {
-    event.preventDefault();
-    if (search === "") {
-      setResults([]);
-      setSearchInfo({ totalhits: 0 });
-      return;
-    }
-
-    if (isError) {
-      // Handle error here
-      console.error("Error fetching data.");
-      return;
-    }
-
-    setResults(data?.query?.search || []);
-    setSearchInfo(data?.query?.searchinfo || { totalhits: 0 });
-    inputRef.current?.focus();
+  const handleSearch = () => {
+    setIsSearchVisible(true);
   };
 
-  useEffect(() => {
-    if (search === "") {
-      setResults([]);
-      setSearchInfo({ totalhits: 0 });
-    }
-  }, [search]);
+  const handleClose = () => {
+    setIsSearchVisible(false);
+    setSearch("");
+  };
 
   return (
     <div className="search-container">
       <Logo />
-      <h1>Wiki search</h1>
-      <form onSubmit={handleSearch}>
+      <h1>Wiki search engine</h1>
+      <form onSubmit={(event) => event.preventDefault()}>
         <input
           type="search"
           placeholder="Search about articles"
           value={search}
           onChange={(e) => setSearch(e.target.value)}
+          ref={inputRef}
         />
-        {searchInfo.totalhits ? (
-          <p className="total-hits">
-            Search result:<span>{searchInfo.totalhits}</span>
-          </p>
-        ) : (
-          ""
+        <Button className="search-btn" onClick={handleSearch} text="search" />
+        {isSearchVisible && (
+          <button type="button" className="close-btn" onClick={handleClose}>
+            <span>&times;</span>
+          </button>
         )}
       </form>
-      <ul className="search-result">
-        {results.map((result, i) => (
-          <li key={i}>
-            <h3>{result.title}</h3>
-            <p dangerouslySetInnerHTML={{ __html: result.snippet }}></p>
-            <a
-              href={`https://en.wikipedia.org/wiki/${result.title}`}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Read more
-            </a>
-          </li>
-        ))}
-      </ul>
+      {isSearchVisible && (
+        <div>
+          {isLoading && <div>Loading...</div>}
+          {isError && <div>Error loading data.</div>}
+          {data && (
+            <div>
+              <p className="total-hits">
+                Search result: <span>{data.query.searchinfo.totalhits}</span>
+              </p>
+              <ul className="search-result">
+                {data.query.search.map((result, i) => (
+                  <li
+                    key={i}
+                    className={`search-card ${
+                      theme === "dark" ? "search-card-dark" : ""
+                    }`}
+                  >
+                    <h3>{result.title}</h3>
+                    <p dangerouslySetInnerHTML={{ __html: result.snippet }}></p>
+                    <a
+                      href={`https://en.wikipedia.org/wiki/${result.title}`}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      Read more
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          )}
+        </div>
+      )}
     </div>
   );
 }

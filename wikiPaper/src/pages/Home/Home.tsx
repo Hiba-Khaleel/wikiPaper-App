@@ -12,7 +12,7 @@ const HomePage: React.FC = () => {
     <>
       <div className="about">
         <img src={WikiCommons} alt="WikiCommons" />
-        <h1>welcome to reading journey</h1>
+        <h1>Welcome to reading journey</h1>
         <p>
           EXPLORE<span> - </span>READ<span> - </span> LEARN
         </p>

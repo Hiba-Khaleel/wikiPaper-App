@@ -77,9 +77,14 @@ export default function EventDisplay() {
             >
               <h2>{event.year}</h2>
               <p>{event.text}</p>
-              {event.pages[0]?.thumbnail?.source && (
+              {event.pages[0]?.thumbnail?.source ? (
                 <img
                   src={event.pages[0].thumbnail.source}
+                  alt={`event-${index}`}
+                />
+              ) : (
+                <img
+                  src={`https://upload.wikimedia.org/wikipedia/en/thumb/8/80/Wikipedia-logo-v2.svg/1200px-Wikipedia-logo-v2.svg.png`}
                   alt={`event-${index}`}
                 />
               )}

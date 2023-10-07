@@ -1,6 +1,6 @@
 import { useNavigate } from "react-router-dom";
 import Button from "../../components/Button/Button";
-import Loading from "../../components/Loading/Loading";
+import wikiball from "../../assets/images/wikilogo.gif";
 import "./error.css";
 
 function Error() {
@@ -11,10 +11,10 @@ function Error() {
   console.log("Error component rendered");
   return (
     <div className="error-Container">
-      <Loading />
-      <h1>Error</h1>
-      <p>Something went wrong </p>
-      <Button onClick={goBack} text="Go back to previous page " />
+      <img src={wikiball} alt="" />
+      <h1>Ops.. an error</h1>
+      <p>Something went wrong..</p>
+      <Button onClick={goBack} text="Go back to previous page" />
     </div>
   );
 }

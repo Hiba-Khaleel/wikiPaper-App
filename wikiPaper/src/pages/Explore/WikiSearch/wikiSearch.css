@@ -4,17 +4,25 @@
 }
 
 .search-container form input {
-  width: 60%;
+  width: 50%;
   height: 3rem;
   font-size: 1.5rem;
-  padding: 0.9rem;
-  border-radius: 15px;
+  padding: 0.5rem;
+  border-radius: 7px;
   border: 1px solid #d5d5d5;
   appearance: none;
   transition: 0.4s;
   outline: none;
   color: #27253d;
-  margin-bottom: 1rem;
+  margin: 1rem;
+}
+.search-btn,
+.close-btn {
+  border-radius: 15px;
+  padding: 1rem;
+  width: 7rem;
+}
+.close-btn {
 }
 
 .search-container form input:focus-within {
@@ -37,26 +45,28 @@
   grid-gap: 1rem;
   max-width: 80%;
 }
+.search-card-dark li {
+  background-color: #27253d;
+}
 
-.search-result li {
-  background-color: #fff;
+.search-result .search-card {
   padding: 0.6rem;
   padding-bottom: 2.5rem;
   border-radius: 5px;
   border: 1px solid #dfdfdf;
 }
-.search-result li p {
+.search-result .search-card p {
   max-width: 85%;
   margin: 0 auto;
   margin-bottom: 1rem;
   padding-bottom: 2rem;
 }
-.search-result li p .searchmatch {
+.search-result .search-card p .searchmatch {
   font-weight: bold;
   font-size: 1.2rem;
   color: #7da87b;
 }
-.search-result li a {
+.search-result .search-card a {
   background-image: linear-gradient(to right, #085843, #21ae9e);
   box-shadow: 0 4px 15px 0 rgba(10, 81, 47, 0.75);
   color: #fff;

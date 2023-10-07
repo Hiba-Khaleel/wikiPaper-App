@@ -1,9 +1,9 @@
-import loadingGif from "../../assets/images/wikilogo.gif";
+import loading from "../../assets/images/loading.gif";
 import "./loading.css";
 function Loading() {
   return (
     <div className="loading">
-      <img src={loadingGif} alt="Loading..." />
+      <img src={loading} alt="Loading..." />
     </div>
   );
 }
