@@ -20,7 +20,7 @@ const TextSlider: React.FC<TextSliderProps> = ({ textArray }) => {
     return () => {
       clearInterval(interval);
     };
-  }, [nextIndex]);
+  }, [nextIndex, textArray]);
 
   return (
     <div className="text-slider">

@@ -47,7 +47,7 @@ export default function WikiSearch() {
       <h1>Wiki search engine</h1>
       <form onSubmit={(event) => event.preventDefault()}>
         <input
-          type="search"
+          type="text"
           placeholder="Search about articles"
           value={search}
           onChange={(e) => setSearch(e.target.value)}
@@ -63,7 +63,7 @@ export default function WikiSearch() {
       {isSearchVisible && (
         <div>
           {isLoading && <div>Loading...</div>}
-          {isError && <div>Error loading data.</div>}
+          {isError && <div></div>}
           {data && (
             <div>
               <p className="total-hits">

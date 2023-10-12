@@ -27,24 +27,39 @@ h1 {
   max-width: 85%;
   margin: 0 auto;
 }
-.eventCard {
+/* .eventCard {
   background-color: #fff;
   display: inline-block;
   border: 1px solid #dfdfdf;
+} */
+.eventCard {
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 1px solid #dfdfdf;
+  padding: 1rem;
+  justify-content: space-between;
+  min-height: 260px;
 }
+
 .eventCard h2 {
   margin: 0 auto;
+  font-size: 1.2rem;
 }
+
 .eventCard p {
   color: black;
+  text-align: center;
   max-width: 80%;
-  margin: 0 auto;
+  margin: 1rem 0;
 }
 .eventCard img {
-  max-width: 12rem;
-  max-height: 12rem;
+  max-width: 15rem;
+  max-height: 14rem;
   border-radius: 6px;
-  margin: 0 auto;
+  margin: 1rem 0;
+  background-color: #fff;
 }
 .eventCardDark {
   background-color: black;
@@ -57,7 +72,6 @@ h1 {
   color: #fff;
 }
 
-/* Style for event card content */
 .eventCardContent {
   flex: 1;
 }

@@ -22,8 +22,6 @@
   padding: 1rem;
   width: 7rem;
 }
-.close-btn {
-}
 
 .search-container form input:focus-within {
   box-shadow: 3px 3px 6px rgba(226, 228, 228, 0.5);
@@ -78,7 +76,7 @@
 @media (min-width: 320px) and (max-width: 767px) {
   .search-result {
     grid-template-columns: auto;
-    grid-gap: 0.3rem;
+    grid-gap: 1rem;
   }
 }
 @media (min-width: 768px) and (max-width: 919px) {

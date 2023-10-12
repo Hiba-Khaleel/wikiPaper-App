@@ -1,11 +1,5 @@
-.homePageContent p {
-  max-width: 40%;
-  font-size: 1.5rem;
-  margin: 0 auto;
-}
-.homePageContent {
-  margin: 0 auto;
-  padding: 1rem;
+.about h1 {
+  font-size: 1rem;
 }
 @media (max-width: 767px) {
   .homePageContent p {
@@ -13,9 +7,8 @@
     font-size: 1.2rem;
   }
 }
-
 .about h1 {
-  font-size: 4rem;
+  font-size: 3rem;
   margin: 0 auto;
   padding-bottom: 1rem;
   width: 90%;
@@ -35,8 +28,11 @@
     width: 80%;
   }
   .about .content {
-    padding-top: 3rem;
     font-size: 1rem;
     max-width: 50%;
+  }
+  .homePageContent p {
+    font-size: 1rem;
+    margin: 0 auto;
   }
 }

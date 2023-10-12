@@ -81,7 +81,7 @@ h2 {
 @media (min-width: 320px) and (max-width: 767px) {
   .random-articles-container {
     grid-template-columns: auto;
-    grid-gap: 0rem;
+    grid-gap: 1rem;
     margin-bottom: 1rem;
     margin: 0 auto;
     margin-top: 1rem;

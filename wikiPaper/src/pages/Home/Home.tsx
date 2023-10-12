@@ -1,7 +1,7 @@
 import WikiCommons from "../../assets/images/wikiCommons.gif";
 import TextSlider from "../../components/Slider/Slider";
-
 import "./Home.css";
+
 const HomePage: React.FC = () => {
   const textArray = [
     "Immerse yourself in daily events from around the world with our DayEvent page. Stay updated with the latest news, cultural highlights, and noteworthy occurrences as they happen. From celebrations to historical milestones, explore the vibrant tapestry of life's daily events.",
@@ -12,7 +12,7 @@ const HomePage: React.FC = () => {
     <>
       <div className="about">
         <img src={WikiCommons} alt="WikiCommons" />
-        <h1>Welcome to reading journey</h1>
+        <h1 className="main-header">Welcome to reading journey</h1>
         <p>
           EXPLORE<span> - </span>READ<span> - </span> LEARN
         </p>
