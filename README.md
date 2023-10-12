@@ -1,7 +1,7 @@
-Welcome to wikiPaper - Your Ultimate Reading Blog
+Welcome to wikiPaper - Your Ultimate Reading Blog 📚.
 Source Code : https://github.com/Hiba-Khaleel/wikiPaper-App/tree/master/wikiPaper
 Website link : https://wikipaperapp1.onrender.com/ 
-📚
+
 This is the final project for the "FooCoding" course, and it's something special! WikiPaper is a website built using React, TypeScript, and JSX, and it doesn't rely on any external libraries or packages except for React Router DOM. This means a lightweight, efficient, and customizable reading experience for you.
 
 About wikiPaper
