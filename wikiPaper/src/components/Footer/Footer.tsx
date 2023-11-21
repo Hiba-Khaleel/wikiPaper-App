@@ -6,7 +6,7 @@ const Footer: React.FC = () => {
       <div className="footer-content">
         <div className="footer-info">
           <p>
-            &copy; {new Date().getFullYear()} All copyrights for Hiba Khaleel
+            &copy; {new Date().getFullYear()} All copyrights for Hiba Khaleel.
           </p>
           <p> : Terms of Service | Privacy Policy</p>
         </div>
