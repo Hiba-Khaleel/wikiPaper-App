@@ -12,7 +12,7 @@ Requirements:
    - useRef
    - useContext
 4. Single Page Application
-:wikiPaper: 🌐
+:wikiPaper https://wikipaperapp1.onrender.com/: 🌐
 
 Explore the world of knowledge with wikiPaper, a powerful reading blog developed as the final assignment for the "FooCoding" course. This project boasts a lightweight design and a feature-rich experience.
 
