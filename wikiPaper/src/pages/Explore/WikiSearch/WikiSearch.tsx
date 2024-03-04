@@ -70,7 +70,7 @@ export default function WikiSearch() {
                 Search result: <span>{data.query.searchinfo.totalhits}</span>
               </p>
               <ul className="search-result">
-                {data.query.search.map((result, i) => (
+                {data.query.search.map((result,i) => (
                   <li
                     key={i}
                     className={`search-card ${
